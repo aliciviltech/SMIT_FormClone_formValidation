@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- ======== header ========= -->
+        <section class="header">
+            <div class="logoContainer">
+                <img src="asset/images/smit_logo.png" alt="logo">
+            </div>
+            <div class="headingTitles">
+                <div class="social">
+                    <img src="asset/images/fb.png">
+                    <img src="asset/images/insta.png">
+                    <img src="asset/images/yt.png">
+                </div>
+                <div class="tite">
+                    <h1>Registration Form - SMIT</h1>
+                </div>
+                <div class="portal">
+                    <a href="https://student.saylaniwelfare.com/dashboard" target="_blank">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span>Student Portal</span>
+                    </a>
+                </div>
+            </div>
+            <div class="services">
+                <p>Services - Education - Registration</p>
+            </div>
+
+            <!-- ===== bootstrap tabs ===== -->
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Registration</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Download ID Card</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Results</button>
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- ============= section containers ============ -->
+        <section class="tabContainers">
+            <!-- containers -->
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Registration -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <form action="">
+                        <div class="fieldItem">
+                            <label>Select city</label>
+                            <select name="City" id="citySelector" required></select>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Select campus</label>
+                            <select name="Campus" id="campusSelector" required></select>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Select course or event</label>
+                            <select name="Course" id="courseSelector" required></select>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Select class preference</label>
+                            <select name="class preference" id="preferenceSelector" required></select>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Full Name</label>
+                            <input name="Full Name" type="text" required>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Father Name</label>
+                            <input name="Father Name" type="text" required>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Email</label>
+                            <input name="email" type="email" required>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Phone</label>
+                            <input name="Phone Number" type="nummber" required>
+                        </div>
+                        <div class="fieldItem">
+                            <label>CNIC</label>
+                            <input name="CNIC" type="number" required>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Father CNIC (optional)</label>
+                            <input name="Father CNIC" type="number">
+                        </div>
+                        <div class="fieldItem">
+                            <label>Date of birth</label>
+                            <input name="Date of birth" type="date" required>
+                        </div>
+                        <div class="fieldItem">
+                            <label>Select gender</label>
+                            <select name="Gender" id="genderSelector" required>
+                                <option value=""></option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="fieldItem2">
+                            <label>Address</label>
+                            <input name="Address" type="text" required>
+                        </div>
+                        <div class="fieldItem2">
+                            <label>Last qualification</label>
+                            <select name="Last qualification" id="qualificationSelector" required>
+                                <option value=""></option>
+                                <option value="matric">Matric</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="undergraduate">Undergraduate</option>
+                                <option value="graduate">Graduate</option>
+                                <option value="masters">Masters</option>
+                                <option value="phd">PHD</option>
+                                <option value="other">other</option>
+                            </select>
+                        </div>
+                        <div class="fieldItem2">
+                            <label>Do you have a Laptop?</label>
+                            <select name="Laptop option" id="laptopSelector" required>
+                                <option value=""></option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="fieldItem3">
+                            <label>Picture</label>
+                            <!-- custom input for upload image -->
+                            <div class="file-input-wrapper">
+                                <div class="imageSetup"></div>
+                                <button type="button" class="file-input-button">+ upload</button>
+                                <input type="file" id="file" name="Picture" required>
+                                <div class="photoContainer"></div>
+                                <ul>
+                                    <li>With white or blue background</li>
+                                    <li>File size must be less than 1MB</li>
+                                    <li>File type: jpg, jpeg, png</li>
+                                    <li>Upload your recent passport size picture</li>
+                                    <li>Your Face should be clearly visible without any Glasses</li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <!-- instructions -->
+                        <div class="instructions">
+                            <ol>
+                                <li>I hereby, solemnly declare that the data and facts mentioned herein are true and
+                                    correct to the best of my knowledge. Further, I will abide by all the established
+                                    and future regulations and policies of SWIT</li>
+                                <li>I hereby accept the responsibilities of good conduct and guarantee that I will not
+                                    be involved in any other activity, political or ethical, but learning during my stay
+                                    in the program.</li>
+                                <li>Defiance will render my admission canceled at any point in time.</li>
+                                <li>Upon completion, of the course, I will complete the required project by SWIT.</li>
+                                <li>It's mandatory for female students to wear abaya/hijab in the class</li>
+                            </ol>
+                        </div>
+                        <p id="errorText"></p>
+                        <button id="submitButton">SUBMIT</button>
+
+                    </form>
+                    <div class="submittedAlert">
+                        <img src="asset/images/submitted.png" alt="">
+                        <h1>Form Submitted Successfully</h1>
+                        <button id="closeAlert">ok</button>
+                    </div>
+                </div>
+
+                <!-- ======================================  Download section ======================================= -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">
+
+                    <div class="searchBox">
+                        <label for="">CNIC (Which you provided during form submission)</label>
+                        <div class="inputAndButton">
+                            <input type="search" id="searchInput">
+                            <button>search</button>
+                        </div>
+                    </div>
+
+                    <div class="smitCard">
+                        <button class="print">Print <i class="fa-solid fa-print"></i></button>
+                        <div class="cardFrontSide">
+                            <img src="asset/images/card1.PNG">
+                            <div class="frontSideData"></div>
+                            <img src="asset/images/card2.PNG">
+                        </div>
+                        <div class="cardBackSide">
+                            <img src="asset/images/card3.PNG">
+                            <div class="backSideData"></div>
+                            <h5>Note: This card is for SMIT premises only. <br> If found please return to SMIT</h5>
+                            <h5 id="signature">Issuing Authority</h5>
+                            <img src="asset/images/card2.PNG">
+                        </div>
+                    </div>
+                    <div class="noRecord"></div>
+
+
+                </div>
+
+
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Signika:wght@300..700&display=swap');
+
+:root {
+    --primary-color: #0d6db7;
+    --secondary-color: #8fd32f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Signika", sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    position: relative;
+}
+
+.header {
+    width: 85%;
+    height: fit-content;
+    margin: auto;
+    background-image: url(asset/images/headerBg.jpg);
+    background-size: cover;
+    background-blend-mode: color;
+    background-color: #ffffffea;
+    text-align: center;
+}
+
+.header .logoContainer {
+    text-align: center;
+    padding: 10px;
+}
+
+.header .logoContainer img {
+    width: 250px;
+}
+
+.header .headingTitles {
+    width: 76%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .headingTitles h1 {
+    font-size: 30px;
+}
+
+.header .social img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.header .portal a {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header .services p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.header #pills-tab {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.nav-link {
+    color: var(--primary-color);
+}
+
+.active {
+    background-color: #fff !important;
+    color: var(--secondary-color) !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .header .headingTitles {
+        width: 100%;
+        /* margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; */
+        flex-direction: column-reverse;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .header .headingTitles h1 {
+        font-size: clamp(22px, 8vw, 30px);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header .logoContainer img {
+        width: 220px;
+    }
+
+    .header #pills-tab {
+        /* display: flex;
+        justify-content: center;
+        font-size: 14px; */
+        /* flex-direction: column; */
+        align-items: center;
+    }
+
+    .nav-link {
+        padding: 3vw;
+        font-size: clamp(12px, 4vw, 14px);
+    }
+}
+
+/* ============== section: tabContainers ================*/
+.tabContainers {
+    /* width: 68%;
+    max-width: 940px;
+    min-width: 720px; */
+    width: clamp(720px, 68%, 940px);
+    margin: auto;
+    display: flex;
+    margin: 50px auto;
+    font-size: 14px;
+}
+
+.tabContainers .tab-content {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    color: #000;
+}
+
+.tabContainers .fieldItem {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.tabContainers .fieldItem2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tabContainers .fieldItem3 {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+label {
+    color: var(--primary-color);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    border: 1px solid var(--secondary-color);
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* custom input for upload image */
+.file-input-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 90px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.file-input-button {
+    display: inline-block;
+    width: 90px;
+    height: 100px;
+    border: 1px dashed gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-input-button:hover {
+    border-color: var(--primary-color);
+}
+
+.file-input-wrapper ul {
+    list-style-type: none;
+    font-size: 12px;
+}
+
+form .instructions {
+    margin-top: 50px;
+}
+
+#errorText {
+    color: red;
+}
+
+#submitButton {
+    width: 100%;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.submittedAlert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.submittedAlert img {
+    width: 100px;
+    margin-bottom: 30px;
+}
+
+.submittedAlert #closeAlert {
+    padding: 10px 30px;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.photoContainer {
+    margin-left: 20px;
+}
+
+.photoContainer img {
+    width: 90px;
+    height: 100px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+
+    .tabContainers {
+        width: 100%;
+    }
+
+    .tabContainers .fieldItem,
+    .tabContainers .fieldItem2,
+    .tabContainers .fieldItem3,
+    form .instructions,
+    #submitButton {
+        /* display: flex;
+        flex-direction: column; */
+        width: 80%;
+        margin: auto;
+    }
+
+    .file-input-wrapper {
+        /* position: relative;
+        display: flex; */
+        flex-direction: column;
+    }
+
+    .file-input-wrapper ul,
+    .instructions ol {
+        padding-left: 0;
+    }
+
+    .photoContainer {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+
+/* ================= download section ========================== */
+.searchBox {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.searchBox input {
+    width: 300px;
+    height: fit-content;
+    padding: 8px !important;
+    border-radius: 5px 0 0 5px;
+}
+.searchBox input:focus {
+    outline: none;
+}
+
+.searchBox button {
+    border: none;
+    padding: 8px 20px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: var(--secondary-color);
+    border-radius: 0 5px 5px 0;
+}
+
+.noRecord{
+    text-align: center;
+    display: none;
+}
+
+.smitCard {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    color: #000;
+    position: relative;
+    display: none;
+    padding: 50px 10px;
+}
+
+.cardFrontSide {
+    width: 200px;
+    height: 310px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.cardBackSide {
+    width: 200px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.smitCard img {
+    width: 100%;
+}
+
+.studentImage {
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+    overflow: hidden;
+    border: 2px solid var(--secondary-color);
+}
+
+.cardBackSide p {
+    margin: 0 15px 7px 15px;
+    line-height: 12px;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardBackSide span {
+    border-bottom: 1px solid black;
+    flex: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cardBackSide p span:first-child {
+    flex: 0 0 auto;
+    border: none !important;
+    margin-right: 10px;
+}
+.qrCode{
+    width: 50px;
+    height: 50px;
+    margin: 20px auto 0 auto;
+}
+.qrCode img{
+    width: 100%;
+}
+.cardBackSide h5{
+    font-size: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0 15px;
+    text-align: center;
+}
+#signature{
+    border-top: 2px solid black;
+    width: fit-content;
+    margin: 0 auto;
+    padding-top: 2px;
+}
+.smitCard .print{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding: 3px 10px;
+    font-size: 16px;
+}
+@media screen and (max-width:430px) {
+    .searchBox {
+        padding: 20px;
+    }
+
+    .searchBox input {
+        width: 100%;
+        height: fit-content;
+        padding: 8px !important;
+    }
+
+    .searchBox button {
+        width: 100%;
+    }
+
+    .smitCard {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 10px;
+    }
+    .smitCard .print{
+        position: relative;
+        top: 0;
+        right: 0;
+        padding: 3px 10px;
+        font-size: 16px;
+    }
+
+}
